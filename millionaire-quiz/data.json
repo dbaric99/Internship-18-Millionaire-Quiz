@@ -1,0 +1,169 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Which of these products is sold by the brands Colgate, Oral-B and Sensodyne?",
+            "answers": [
+                "Deodorant",
+                "Shampoo",
+                "Toothpaste",
+                "Sun cream"
+            ],
+            "correct_answer": "Toothpaste"
+        },
+        {
+            "id": 2,
+            "question": "Which tool was used as a weapon by the Norse god Thor?",
+            "answers": [
+                "Pliers",
+                "Hammer",
+                "Screwdriver",
+                "Saw"
+            ],
+            "correct_answer": "Hammer"
+        },
+        {
+            "id": 3,
+            "question": "What is the name of the classic dessert consisting of sponge cake and ice cream covered in meringue?",
+            "answers": [
+                "Baked Rhode Island",
+                "Baked Wyoming",
+                "Baked Connecticut",
+                "Baked Alaska"
+            ],
+            "correct_answer": "Baked Alaska"
+        },
+        {
+            "id": 4,
+            "question": "Trigonometry is a branch of which subject?",
+            "answers": [
+                "Biology",
+                "Economics",
+                "Psychology",
+                "Mathematics"
+            ],
+            "correct_answer": "Mathematics"
+        },
+        {
+            "id": 5,
+            "question": "The hammer and sickle is one of the most recognisable symbols of which political ideology?",
+            "answers": [
+                "Communism",
+                "Fascism",
+                "Capitalism",
+                "Socialism"
+            ],
+            "correct_answer": "Communism"
+        },
+        {
+            "id": 6,
+            "question": "Which of these means a speech in a play where a character talks to themselves rather than to other characters?",
+            "answers": [
+                "Interlude",
+                "Revue",
+                "Soliloquy",
+                "Chorus"
+            ],
+            "correct_answer": "Soliloquy"
+        },
+        {
+            "id": 7,
+            "question": "Which of these is a religious event celebrated in Hinduism?",
+            "answers": [
+                "Diwali",
+                "Ramadan",
+                "Hanukkah",
+                "Whitsun"
+            ],
+            "correct_answer": "Diwali"
+        },
+        {
+            "id": 8,
+            "question": "Suffolk Punch and Hackney are types of what?",
+            "answers": [
+                "Carriage",
+                "Wrestling style",
+                "Horse",
+                "Cocktail"
+            ],
+            "correct_answer": "Horse"
+        },
+        {
+            "id": 9,
+            "question": "Which iconic horror film involves a couple whose newborn child is replaced at birth with the Antichrist?",
+            "answers": [
+                "The Shining",
+                "Don't Look Now",
+                "The Exorcist",
+                "The Omen"
+            ],
+            "correct_answer": "The Omen"
+        },
+        {
+            "id": 10,
+            "question": "In the opera by Rossini, what is the first name of The Barber of Seville?",
+            "answers": [
+                "Tamino",
+                "Alfredo",
+                "Don Carlos",
+                "Figaro"
+            ],
+            "correct_answer": "Figaro"
+        },
+        {
+            "id": 11,
+            "question": "Which of these books is believed to have been inspired by the real-life experiences of the Scottish sailor Alexander Selkirk?",
+            "answers": [
+                "Moby Dick",
+                "Robinson Crusoe",
+                "Treasure Island",
+                "The Count of Monte Cristo"
+            ],
+            "correct_answer": "Robinson Crusoe"
+        },
+        {
+            "id": 12,
+            "question": "Which toxic substance is obtained from the pressed seeds of the castor oil plant?",
+            "answers": [
+                "Sarin",
+                "Strychnine",
+                "Ricin",
+                "Cyanide"
+            ],
+            "correct_answer": "Ricin"
+        },
+        {
+            "id": 13,
+            "question": "The word 'aristocracy' literally means power in the hands of whom?",
+            "answers": [
+                "The few",
+                "The best",
+                "The barons",
+                "The rich"
+            ],
+            "correct_answer": "The best"
+        },
+        {
+            "id": 14,
+            "question": "From which author's work did scientists take the word 'quark'?",
+            "answers": [
+                "Lewis Carroll",
+                "Edward Lear",
+                "James Joyce",
+                "Aldous Huxley"
+            ],
+            "correct_answer": "Lewis Carroll"
+        },
+        {
+            "id": 15,
+            "question": "Which insect shorted out an early supercomputer and inspired the term 'computer bug'?",
+            "answers": [
+                "Moth",
+                "Roach",
+                "Fly",
+                "Japanese beetle"
+            ],
+            "correct_answer": "Moth"
+        }
+    ]
+}
