@@ -1,7 +1,11 @@
 .gameWrapper {
     height: 80vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .gameContentWrapper {
     display: flex;
+    height: 100%;
+    margin-top: 20px;
 }

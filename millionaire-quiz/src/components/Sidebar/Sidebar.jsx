@@ -2,7 +2,9 @@ import styles from './Sidebar.module.css';
 
 function Sidebar() {
   return (
-    <div>Sidebar</div>
+    <div className={styles.wrapper}>
+
+    </div>
   )
 }
 
