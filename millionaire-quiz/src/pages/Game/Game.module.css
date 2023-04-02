@@ -1,35 +1,7 @@
-.title {
-    font-family: Copperplate-Gothic-Bold-Regular;
-    background: linear-gradient(135deg,
-            #7F20F5 0%,
-            #A05BF6 25%,
-            #FAF5FF 50%,
-            #B8B8FA 75%,
-            #8F8FF8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.gameWrapper {
+    height: 80vh;
 }
 
-.smallTitle {
-    font-family: Copperplate-Gothic-Bold-Regular;
-    background: linear-gradient(135deg,
-            #7F20F5 0%,
-            #A05BF6 25%,
-            #FAF5FF 50%,
-            #B8B8FA 75%,
-            #8F8FF8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.titleWrapper {
+.gameContentWrapper {
     display: flex;
-    justify-content: space-between;
-    height: 75px;
-}
-.titleWrapper:nth-child(odd) {
-    margin-top: 0px !important;
-}
-.titleWrapper:nth-child(even) {
-    margin-bottom: 0px !important;
 }

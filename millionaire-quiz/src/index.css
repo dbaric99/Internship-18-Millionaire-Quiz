@@ -5,6 +5,13 @@
   --light-blue: #B8B8FA;
   --blue: #8F8FF8;
   --white: #FAF5FF;
+  --background: rgba(0, 0, 119, 0.8);
+  --border: linear-gradient(
+    90deg, 
+    #0000F5 0%, 
+    #8F9CF8 50%,
+    #0000F5 100%
+    );
 }
 
 @font-face {
@@ -13,7 +20,11 @@
 }
 
 body {
-  background-color: var(--main-blue);
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 119) 0%,
+    rgba(0, 0, 0) 100%
+  );
   width: 60%;
   height: 80vh;
   margin: 10vh auto;
