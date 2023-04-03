@@ -1,10 +1,11 @@
 import styles from './MainScreen.module.css'
-import { Question } from '.'
+import { AnswersList, Question } from '.'
 
 function MainScreen() {
   return (
     <div className={styles.wrapper}>
       <Question />
+      <AnswersList />
     </div>
   )
 }

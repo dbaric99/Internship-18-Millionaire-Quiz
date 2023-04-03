@@ -28,6 +28,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 35px;
 }
 .questionWrapper::before {
     content: "";
@@ -48,5 +49,55 @@
 .questionText {
     color: var(--white);
     font-size: 20px;
+}
+
+.answersParent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.answerWrapper {
+    height: 50px;
+    position:relative;
+    flex-basis: 50%;
+    margin-bottom: 50px;
+}
+.answerContainer {
+    height: 100%;
+    background-color: var(--main-blue);
+    margin-right: 40px;
+    margin-left: 40px;
+    border-radius: 5px;
+    border-bottom: 1px solid var(--gold);
+    border-top: 1px solid var(--gold);
+}
+.answerText {
+    font-size: 15px;
+    color: var(--white);
+    text-align: center;
+    line-height: 50px;
+}
+.answerText > span {
+    font-weight: bold;
+    color: var(--orange);
+    margin-right: 7px;
+}
+.borderEdgeLeft, .borderEdgeRight {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    background: var(--main-blue);
+    z-index: -1;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 6px;
+    border: 1px solid var(--gold);
+}
+.borderEdgeLeft {
+    left: 25px;
+}
+.borderEdgeRight {
+    right: 25px;
 }
 

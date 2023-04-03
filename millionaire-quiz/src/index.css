@@ -16,6 +16,8 @@
     #8F9CF8 50%,
     #0000F5 100%
   );
+  --orange: #EE702C;
+  --gold: #DAA520;
 }
 
 @font-face {
@@ -28,4 +30,8 @@ body {
   width: 80%;
   height: 80vh;
   margin: 10vh auto;
+}
+
+* {
+  font-family: sans-serif;
 }
