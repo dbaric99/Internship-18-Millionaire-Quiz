@@ -55,6 +55,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    position: relative;
+}
+.firstRowLine, .secondRowLine {
+    border-bottom: 1px solid var(--gold);
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.firstRowLine {
+    top: 13%;
+}
+.secondRowLine {
+    top: 63%;
 }
 
 .answerWrapper {
