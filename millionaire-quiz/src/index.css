@@ -18,7 +18,9 @@
   );
   --orange: #EE702C;
   --gold: #DAA520;
-  --answers-background: #000077
+  --yellow: #FFCC01;
+  --green: #01FF00;
+  --red: #FF0000;
 }
 
 @font-face {
