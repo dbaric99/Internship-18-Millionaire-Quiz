@@ -29,6 +29,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 35px;
+    padding: 10px;
 }
 .questionWrapper::before {
     content: "";
@@ -84,12 +85,14 @@
     border-radius: 5px;
     border-bottom: 1px solid var(--gold);
     border-top: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
 }
 .answerText {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--white);
     text-align: center;
-    line-height: 50px;
+    padding-left: 10px;
 }
 .answerText > span {
     font-weight: bold;

@@ -3,7 +3,7 @@ import { questionUtil } from "../utils";
 
 const defaultContext = {
     currentQuestionId: 1,
-    currentQuestionObj: questionUtil.getQuestion(1),
+    currentQuestionObj: questionUtil.getQuestionById(1),
 }
 
 export const QuestionContext = createContext(defaultContext);
@@ -17,11 +17,11 @@ const QuestionProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        setCurrentQuestionObj(questionUtil.getQuestion(currentQuestionId));
+        setCurrentQuestionObj(questionUtil.getQuestionById(currentQuestionId));
     }, [currentQuestionId])
 
     return (
-        <QuestionContext.Provider value={{ currentQuestionId, nextQuestion }}>
+        <QuestionContext.Provider value={{ currentQuestionId, currentQuestionObj, nextQuestion }}>
             {children}
         </QuestionContext.Provider>
     )
