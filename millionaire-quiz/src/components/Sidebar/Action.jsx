@@ -1,12 +1,5 @@
-import fiftyPurple from '../../assets/images/5050.jpg';
-import askPurple from '../../assets/images/ata.jpg';
-import phonePurple from '../../assets/images/paf.png';
-import fiftyBlue from '../../assets/images/50502.png';
-import askBlue from '../../assets/images/ata2.png';
-import phoneBlue from '../../assets/images/paf2.png';
-import {actionConstants} from '../../constants';
 import styles from './Sidebar.module.css'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function Action({type, icons}) {
     const [hovered, setHovered] = useState(false);

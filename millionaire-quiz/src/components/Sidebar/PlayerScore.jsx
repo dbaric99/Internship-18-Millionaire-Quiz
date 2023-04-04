@@ -13,7 +13,7 @@ function PlayerScore() {
                 {
                     (currentQuestionId > 1) 
                     ? questionScoreUtil.getScoreById(currentQuestionId - 1).amount
-                    : questionScoreUtil.getScoreById(1).amount
+                    : 0
                 }
             </div>
         </div>
