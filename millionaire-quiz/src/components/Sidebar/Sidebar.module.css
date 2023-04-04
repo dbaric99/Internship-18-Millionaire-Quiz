@@ -26,8 +26,75 @@
     padding: 10px;
     width: 92%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .action {
     width: 60px;
+}
+
+.playerScoreWrapper {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.playerScoreTitle {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.currentScoreWrapper {
+    border: 3px solid var(--main-blue);
+    border-left: none;
+    border-right: none;
+    width: 98%;
+    padding: 8px 0px;
+    background: var(--background);
+}
+.currentScore {
+    font-size: 18px;
+    margin-left: 15%;
+}
+.currentScore span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.scoreboardWrapper {
+    height: 71%;
+}
+
+.scoreWrapper {
+    padding-left: 15%;
+    height: calc(100% / 15);
+    width: 83%;
+    margin-left: 3px;
+}
+.scoreWrapper > * {
+    display: inline-block;
+    font-weight: bold;
+}
+.scoreWrapper > :first-child {
+    width: 10%;
+    text-align: right;
+}
+.scoreWrapper > :last-child {
+    margin-left: 10%;
+}
+
+.guaranteedScore {
+    color: var(--white);
+}
+.normalScore {
+    color: var(--orange);
+}
+
+.activeScore {
+    background-color: var(--orange);
+    border-radius: 20px;
+}
+.activeScore > :first-child {
+    color: var(--white);
+}
+.activeScore > :last-child {
+    color: var(--black);
 }

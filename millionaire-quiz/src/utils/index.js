@@ -1,1 +1,1 @@
-export * from './questionUtil';
+export * from './questionScoreUtil';

@@ -1,4 +1,4 @@
-import { ActionsBar, PlayerScore } from '.';
+import { ActionsBar, PlayerScore, Scoreboard } from '.';
 import styles from './Sidebar.module.css';
 
 function Sidebar() {
@@ -6,6 +6,7 @@ function Sidebar() {
     <div className={styles.wrapper}>
       <ActionsBar/>
       <PlayerScore/>
+      <Scoreboard/>
     </div>
   )
 }

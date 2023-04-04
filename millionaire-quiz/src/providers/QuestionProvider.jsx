@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { questionUtil } from "../utils";
+import { questionScoreUtil } from "../utils";
 
 const defaultContext = {
     currentQuestionId: 1,
-    currentQuestionObj: questionUtil.getQuestionById(1),
+    currentQuestionObj: questionScoreUtil.getQuestionById(1),
 }
 
 export const QuestionContext = createContext(defaultContext);
@@ -17,7 +17,7 @@ const QuestionProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        setCurrentQuestionObj(questionUtil.getQuestionById(currentQuestionId));
+        setCurrentQuestionObj(questionScoreUtil.getQuestionById(currentQuestionId));
     }, [currentQuestionId])
 
     return (

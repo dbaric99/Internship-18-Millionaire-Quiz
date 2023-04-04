@@ -1,4 +1,5 @@
 import questions from '../data/questions.json';
+import scoreboard from '../data/scoreboard.json';
 
 const getQuestionById = (id) => {
     return questions.questions.find((question) => question.id === id);
@@ -11,7 +12,12 @@ const getMappedAnswers = (question) => {
     });
 }
 
-export const questionUtil = {
+const getScoreById = (id) => {
+    return scoreboard.scores.find((score) => score.id === id);
+}
+
+export const questionScoreUtil = {
     getQuestionById,
-    getMappedAnswers
+    getMappedAnswers,
+    getScoreById
 }

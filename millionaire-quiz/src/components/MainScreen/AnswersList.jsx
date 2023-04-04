@@ -1,7 +1,7 @@
 import styles from './MainScreen.module.css';
 import {Answer} from '.';
 import {useQuestion} from '../../providers/QuestionProvider';
-import { questionUtil } from '../../utils';
+import { questionScoreUtil } from '../../utils';
 
 function AnswersList() {
   const {currentQuestionObj} = useQuestion();
@@ -11,7 +11,7 @@ function AnswersList() {
       <div className={styles.firstRowLine}></div>
       <div className={styles.secondRowLine}></div>
       {
-        questionUtil.getMappedAnswers(currentQuestionObj).map((answer, index) => <Answer answer={answer} key={index}/>)
+        questionScoreUtil.getMappedAnswers(currentQuestionObj).map((answer, index) => <Answer answer={answer} key={index}/>)
       }
     </div>
   )
