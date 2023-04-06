@@ -38,6 +38,10 @@ const QuestionProvider = ({ children }) => {
     setCurrentQuestionObj(question);
   };
 
+  const restartQuiz = () => {
+    setCurrentQuestionId(defaultContext.currentQuestionId);
+  }
+
   useEffect(() => {
     setCurrentQuestionObj(questionScoreUtil.getQuestionById(currentQuestionId));
   }, [currentQuestionId]);
@@ -54,6 +58,7 @@ const QuestionProvider = ({ children }) => {
         nextQuestion,
         removeTwoWrongAnswers,
         remainingAnswers,
+        restartQuiz
       }}
     >
       {children}

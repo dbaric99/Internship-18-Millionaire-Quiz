@@ -129,19 +129,19 @@
     transition: all .3s ease-in-out;
 }
 
-.answerContainer--correct {
+.answerContainerCorrect {
     background: var(--green);
 }
-.answerContainer--correct > .borderEdgeLeft,
-.answerContainer--correct > .borderEdgeRight {
+.answerContainerCorrect > .borderEdgeLeft,
+.answerContainerCorrect > .borderEdgeRight {
     background: var(--green);
 }
 
-.answerContainer--wrong {
+.answerContainerWrong {
     background: var(--red);
 }
-.answerContainer--wrong > .borderEdgeLeft,
-.answerContainer--wrong > .borderEdgeRight {
+.answerContainerWrong > .borderEdgeLeft,
+.answerContainerWrong > .borderEdgeRight {
     background: var(--red);
 }
 
