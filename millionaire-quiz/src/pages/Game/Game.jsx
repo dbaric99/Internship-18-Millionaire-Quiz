@@ -1,4 +1,5 @@
 import { MainScreen, MainTitle, Sidebar } from '../../components';
+import { SwitchDialog } from '../../components/Dialogs/SwitchDialog';
 import styles from './Game.module.css';
 
 function Game() {
@@ -9,6 +10,7 @@ function Game() {
           <MainScreen />
           <Sidebar />
         </div>
+        <SwitchDialog/>
     </div>
   )
 }

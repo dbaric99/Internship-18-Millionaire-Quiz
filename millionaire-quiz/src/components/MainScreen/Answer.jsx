@@ -1,7 +1,10 @@
 import { useRef } from 'react';
+import { useDialog } from '../../providers/DialogProvider';
+import { dialogConstants } from '../../constants/dialogConstants';
 import styles from './MainScreen.module.css';
 
 function Answer({answer}) {
+  const { open } = useDialog();
   const [key, value] = Object.entries(answer)[0];
 
   const answerBox = useRef(null);
@@ -9,9 +12,8 @@ function Answer({answer}) {
   const rightBorder = useRef(null);
 
   const handleAnswerClick = (e) => {
-    console.log("MOUSE CLICK");
     if(!(e.target.contains(answerBox.current) || e.target.contains(leftBorder.current) || e.target.contains(rightBorder.current))) return;
-    
+    open(dialogConstants.dialogType.CONFIRM_DIALOG, {onConfirm: () => console.log("CONFIRMED")});
   }
 
   return (

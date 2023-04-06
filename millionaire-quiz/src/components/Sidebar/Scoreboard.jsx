@@ -8,9 +8,9 @@ function Scoreboard() {
   return (
     <div className={styles.scoreboardWrapper}>
         {
-            scoreboard.scores.slice().reverse().map((score) => {
+            scoreboard.scores.slice().reverse().map((score, index) => {
                 return (
-                    <div className={`${styles.scoreWrapper} ${score.id%5===0 ? styles.guaranteedScore : styles.normalScore} ${currentQuestionId===score.id ? styles.activeScore : ''}`}>
+                    <div key={index} className={`${styles.scoreWrapper} ${score.id%5===0 ? styles.guaranteedScore : styles.normalScore} ${currentQuestionId===score.id ? styles.activeScore : ''}`}>
                         <span>{score.id}</span>
                         <span>{score.amount}</span>
                     </div>
