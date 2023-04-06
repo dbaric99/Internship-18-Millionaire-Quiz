@@ -12,7 +12,6 @@ function Answer({answer}) {
   const rightBorder = useRef(null);
 
   const handleAnswerClick = (e) => {
-    if(!(e.target.contains(answerBox.current) || e.target.contains(leftBorder.current) || e.target.contains(rightBorder.current))) return;
     open(dialogConstants.dialogType.CONFIRM_DIALOG, {onConfirm: () => console.log("CONFIRMED")});
   }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 function InfoDialog() {
   return (
-    <div>InfoDialog</div>
+    <div></div>
   )
 }
 

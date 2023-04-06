@@ -1,8 +1,20 @@
-import React from 'react'
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+} from "@mui/material";
 
-function ActionDialog() {
+function ActionDialog({isOpen, onClose, title, text}) {
   return (
-    <div>ActionDialog</div>
+    <Dialog open={isOpen} onClose={onClose}>
+    <DialogTitle>{title}</DialogTitle>
+    <DialogContent>{text}</DialogContent>
+    <DialogActions>
+      <Button onClick={onClose}>Close</Button>
+    </DialogActions>
+  </Dialog>
   )
 }
 

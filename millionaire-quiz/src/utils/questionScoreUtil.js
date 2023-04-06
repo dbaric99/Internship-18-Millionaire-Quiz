@@ -23,9 +23,19 @@ const getRandomWrongAnswer = (question) => {
     return wrongAnswers[randomIndex];
 }
 
+const getAnswerLetter = (question, answer) => {
+    const mappedAnswers = getMappedAnswers(question);
+    const answerLetter = mappedAnswers.find((mappedAnswer) => {
+        return Object.values(mappedAnswer)[0] === answer;
+    });
+    return Object.keys(answerLetter)[0];
+}
+
+
 export const questionScoreUtil = {
     getQuestionById,
     getMappedAnswers,
     getScoreById,
-    getRandomWrongAnswer
+    getRandomWrongAnswer,
+    getAnswerLetter
 }
