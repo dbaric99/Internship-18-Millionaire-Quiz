@@ -9,23 +9,28 @@ import phoneBlue from '../../assets/images/paf2.png';
 import { dialogConstants } from '../../constants';
 import { useDialog } from '../../providers/DialogProvider';
 import { useQuestion } from '../../providers/QuestionProvider';
+import { useAction } from '../../providers/ActionProvider';
 import { actionsUtil } from '../../utils';
 import styles from './Sidebar.module.css';
 
 function ActionsBar() {
   const { open } = useDialog();
+  const {utilizeAJoker} = useAction();
   const {currentQuestionObj, removeTwoWrongAnswers} = useQuestion();
 
   const handleFiftyFifty = () => {
     removeTwoWrongAnswers();
+    utilizeAJoker(actionConstants.typeOfAction.FIFTY_FIFTY);
   }
   
   const handleAskTheAudience = () => {
     open(dialogConstants.dialogType.ACTION_DIALOG, {title: "Ask the audience", text: actionsUtil.askTheAudience(currentQuestionObj)});
+    utilizeAJoker(actionConstants.typeOfAction.ASK_THE_AUDIENCE);
   }
 
   const handlePhoneAFriend = () => {
     open(dialogConstants.dialogType.ACTION_DIALOG, {title: "Your friend says", text: actionsUtil.phoneAFriend(currentQuestionObj)});
+    utilizeAJoker(actionConstants.typeOfAction.PHONE_A_FRIEND);
   }
 
   return (

@@ -31,6 +31,10 @@
 .action {
     width: 60px;
 }
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
 
 .playerScoreWrapper {
     color: var(--white);

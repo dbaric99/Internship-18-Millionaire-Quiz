@@ -1,13 +1,27 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const defaultContext = {
-    FIFTY_FIFTY: false,
-    ASK_THE_AUDIENCE: false,
-    PHONE_A_FRIEND: false,
+    FIFTY_FIFTY: true,
+    ASK_THE_AUDIENCE: true,
+    PHONE_A_FRIEND: true,
 }
 
 export const ActionContext = createContext(defaultContext);
 
 const ActionProvider = ({ children }) => {
-    
-}
+    const [activeJokers, setActiveJokers] = useState(defaultContext);
+
+    const utilizeAJoker = (jokerConstant) => {
+        setActiveJokers((prev) => ({...prev, [jokerConstant]: false}));
+    }
+
+    return (
+        <ActionContext.Provider value={{activeJokers, utilizeAJoker}}>
+            {children}
+        </ActionContext.Provider>
+    );
+};
+
+export const useAction = () => useContext(ActionContext);
+
+export default ActionProvider;

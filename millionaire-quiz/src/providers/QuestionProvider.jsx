@@ -15,24 +15,27 @@ const QuestionProvider = ({ children }) => {
   const [currentQuestionObj, setCurrentQuestionObj] = useState(
     defaultContext.currentQuestionObj
   );
-  const [remainingAnswers, setRemainingAnswers] = useState(currentQuestionObj.answers);
+  const [remainingAnswers, setRemainingAnswers] = useState(
+    currentQuestionObj.answers
+  );
 
   const nextQuestion = () => {
     setCurrentQuestionId((prev) => prev + 1);
   };
 
   const removeTwoWrongAnswers = () => {
-    
-  let question = Object.assign({}, currentQuestionObj);
-  
-  const correctIndex = question.answers.indexOf(question.correct_answer);
-  
-  const indexesToRemove = [...Array(question.answers.length).keys()].filter(i => i !== correctIndex);
-  indexesToRemove.sort(() => Math.random() - 0.5);
-  indexesToRemove.splice(2);
-  
-  indexesToRemove.forEach(index => question.answers[index] = null);
-  setCurrentQuestionObj(question);
+    let question = Object.assign({}, currentQuestionObj);
+
+    const correctIndex = question.answers.indexOf(question.correct_answer);
+
+    const indexesToRemove = [...Array(question.answers.length).keys()].filter(
+      (i) => i !== correctIndex
+    );
+    indexesToRemove.sort(() => Math.random() - 0.5);
+    indexesToRemove.splice(2);
+
+    indexesToRemove.forEach((index) => (question.answers[index] = null));
+    setCurrentQuestionObj(question);
   };
 
   useEffect(() => {
@@ -41,11 +44,17 @@ const QuestionProvider = ({ children }) => {
 
   useEffect(() => {
     setRemainingAnswers(currentQuestionObj.answers);
-  }, [currentQuestionObj])
+  }, [currentQuestionObj]);
 
   return (
     <QuestionContext.Provider
-      value={{ currentQuestionId, currentQuestionObj, nextQuestion, removeTwoWrongAnswers, remainingAnswers }}
+      value={{
+        currentQuestionId,
+        currentQuestionObj,
+        nextQuestion,
+        removeTwoWrongAnswers,
+        remainingAnswers,
+      }}
     >
       {children}
     </QuestionContext.Provider>
