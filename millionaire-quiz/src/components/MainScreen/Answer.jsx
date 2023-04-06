@@ -1,13 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import { useDialog } from '../../providers/DialogProvider';
-import { useQuestion } from '../../providers/QuestionProvider';
-import { dialogConstants } from '../../constants/dialogConstants';
-import {useDebounce} from '../../hooks/useDebounce';
-import styles from './MainScreen.module.css';
+import { useEffect, useRef, useState } from "react";
+import { useDialog } from "../../providers/DialogProvider";
+import { useQuestion } from "../../providers/QuestionProvider";
+import { dialogConstants } from "../../constants/dialogConstants";
+import { useDebounce } from "../../hooks/useDebounce";
+import styles from "./MainScreen.module.css";
 
-function Answer({answer, selectedAnswer, wrongAnswer}) {
+function Answer({ answer, selectedAnswer, wrongAnswer }) {
   const { open } = useDialog();
-  const {currentQuestionId, currentQuestionObj, nextQuestion, restartQuiz} = useQuestion();  
+  const { currentQuestionId, currentQuestionObj, nextQuestion, restartQuiz } =
+    useQuestion();
   const [isClicked, setIsClicked] = useState(false);
   const [answerClass, setAnswerClass] = useState(null);
   const [key, value] = Object.entries(answer)[0];
@@ -17,13 +18,21 @@ function Answer({answer, selectedAnswer, wrongAnswer}) {
   const rightBorder = useRef(null);
 
   const debouncedNextQuestion = useDebounce(nextQuestion, 3000);
-  const debouncedRestartQuiz = useDebounce(restartQuiz, 3000);
-  const debounceInfoDialog = useDebounce(() => open(dialogConstants.dialogType.INFO_DIALOG, {onRestart: restartQuiz}), 3000);
+  const debouncedRestartQuiz = useDebounce(() => {
+    restartQuiz();
+    setAnswerClass(null);
+    wrongAnswer(false);
+  }, 3000);
+  const debounceInfoDialog = useDebounce(
+    () =>
+      open(dialogConstants.dialogType.INFO_DIALOG, { onRestart: restartQuiz }),
+    3000
+  );
 
-  const handleAnswer = () => {    
-    if(currentQuestionObj.correct_answer === value) {
+  const handleAnswer = () => {
+    if (currentQuestionObj.correct_answer === value) {
       setAnswerClass(styles.answerContainerCorrect);
-      if(currentQuestionId < 15) {
+      if (currentQuestionId < 15) {
         debouncedNextQuestion();
         return;
       } else {
@@ -35,32 +44,44 @@ function Answer({answer, selectedAnswer, wrongAnswer}) {
     setAnswerClass(styles.answerContainerWrong);
     wrongAnswer(true);
     debouncedRestartQuiz();
-  }
+  };
 
   const handleAnswerClick = (e) => {
-    open(dialogConstants.dialogType.CONFIRM_DIALOG, {onConfirm: handleAnswer});
-  }
+    open(dialogConstants.dialogType.CONFIRM_DIALOG, {
+      onConfirm: handleAnswer,
+    });
+  };
 
   useEffect(() => {
     setAnswerClass(null);
-  }, [answer])
+  }, [answer]);
 
   useEffect(() => {
-    if(selectedAnswer && currentQuestionObj.correct_answer === value)
+    if (selectedAnswer && currentQuestionObj.correct_answer === value)
       setAnswerClass(styles.answerContainerCorrect);
-    else if(selectedAnswer && currentQuestionObj.correct_answer !== value && isClicked)
+    else if (
+      selectedAnswer &&
+      currentQuestionObj.correct_answer !== value &&
+      isClicked
+    )
       setAnswerClass(styles.answerContainerWrong);
-  }, [selectedAnswer])
+  }, [selectedAnswer]);
 
   return (
     <div className={styles.answerWrapper} onClick={(e) => handleAnswerClick(e)}>
-      <div ref={answerBox} className={`${styles.answerContainer} ${answerClass}`}>
-        <div className={styles.answerText}><span>{key}:</span>{value}</div>
+      <div
+        ref={answerBox}
+        className={`${styles.answerContainer} ${answerClass}`}
+      >
+        <div className={styles.answerText}>
+          <span>{key}:</span>
+          {value}
+        </div>
         <div ref={leftBorder} className={styles.borderEdgeLeft}></div>
         <div ref={rightBorder} className={styles.borderEdgeRight}></div>
       </div>
     </div>
-  )
+  );
 }
 
-export {Answer}
+export { Answer };
