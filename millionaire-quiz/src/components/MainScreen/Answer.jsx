@@ -28,6 +28,7 @@ function Answer({answer, selectedAnswer, wrongAnswer}) {
         return;
       } else {
         debounceInfoDialog();
+        return;
       }
     }
     setIsClicked(true);
