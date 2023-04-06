@@ -20,7 +20,7 @@ const phoneAFriend = (question) => {
 
     let probablyCorrectAnswer = getAnswer(shouldDisplayCorrect, question);
     
-    return `Your friend answered: I think the answer is ${probablyCorrectAnswer}`;
+    return `I think the answer is ${probablyCorrectAnswer}`;
 }
 
 export const actionsUtil = {
