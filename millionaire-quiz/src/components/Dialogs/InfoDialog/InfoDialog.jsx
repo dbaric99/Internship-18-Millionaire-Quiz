@@ -1,9 +1,19 @@
-import React from 'react'
+import { Dialog, DialogTitle, DialogActions, Button } from "@mui/material";
 
-function InfoDialog() {
+function InfoDialog({ isOpen, onClose, onRestart }) {
+  const handleRestart = () => {
+    onRestart();
+    onClose();
+  }
+
   return (
-    <div></div>
-  )
+    <Dialog open={isOpen} onClose={onClose}>
+      <DialogTitle>You won $1M</DialogTitle>
+      <DialogActions>
+        <Button onClick={handleRestart}>Try your luck again!</Button>
+      </DialogActions>
+    </Dialog>
+  );
 }
 
-export {InfoDialog}
+export { InfoDialog };

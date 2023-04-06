@@ -7,7 +7,7 @@ import styles from './MainScreen.module.css';
 
 function Answer({answer, selectedAnswer, wrongAnswer}) {
   const { open } = useDialog();
-  const {currentQuestionObj, nextQuestion, restartQuiz} = useQuestion();  
+  const {currentQuestionId, currentQuestionObj, nextQuestion, restartQuiz} = useQuestion();  
   const [isClicked, setIsClicked] = useState(false);
   const [answerClass, setAnswerClass] = useState(null);
   const [key, value] = Object.entries(answer)[0];
@@ -18,12 +18,17 @@ function Answer({answer, selectedAnswer, wrongAnswer}) {
 
   const debouncedNextQuestion = useDebounce(nextQuestion, 3000);
   const debouncedRestartQuiz = useDebounce(restartQuiz, 3000);
+  const debounceInfoDialog = useDebounce(() => open(dialogConstants.dialogType.INFO_DIALOG, {onRestart: restartQuiz}), 3000);
 
   const handleAnswer = () => {    
     if(currentQuestionObj.correct_answer === value) {
       setAnswerClass(styles.answerContainerCorrect);
-      debouncedNextQuestion();
-      return;
+      if(currentQuestionId < 15) {
+        debouncedNextQuestion();
+        return;
+      } else {
+        debounceInfoDialog();
+      }
     }
     setIsClicked(true);
     setAnswerClass(styles.answerContainerWrong);
