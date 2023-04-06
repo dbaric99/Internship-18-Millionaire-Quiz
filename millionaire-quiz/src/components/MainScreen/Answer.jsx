@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDialog } from '../../providers/DialogProvider';
+import { useQuestion } from '../../providers/QuestionProvider';
 import { dialogConstants } from '../../constants/dialogConstants';
 import styles from './MainScreen.module.css';
 

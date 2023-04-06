@@ -14,10 +14,10 @@ import styles from './Sidebar.module.css';
 
 function ActionsBar() {
   const { open } = useDialog();
-  const {currentQuestionObj} = useQuestion();
+  const {currentQuestionObj, removeTwoWrongAnswers} = useQuestion();
 
   const handleFiftyFifty = () => {
-
+    removeTwoWrongAnswers();
   }
   
   const handleAskTheAudience = () => {
