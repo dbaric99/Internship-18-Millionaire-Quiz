@@ -3,6 +3,8 @@ import { useDialog } from "../../providers/DialogProvider";
 import { useQuestion } from "../../providers/QuestionProvider";
 import { dialogConstants } from "../../constants/dialogConstants";
 import { useDebounce } from "../../hooks/useDebounce";
+import correctSound from "../../assets/audio/correct.mp3";
+import wrongSound from "../../assets/audio/wrong.mp3";
 import styles from "./MainScreen.module.css";
 
 function Answer({ answer, selectedAnswer, wrongAnswer }) {
@@ -12,6 +14,8 @@ function Answer({ answer, selectedAnswer, wrongAnswer }) {
   const [isClicked, setIsClicked] = useState(false);
   const [answerClass, setAnswerClass] = useState(null);
   const [key, value] = Object.entries(answer)[0];
+  const correctAnswerAudio = new Audio(correctSound);
+  const wrongAnswerAudio = new Audio(wrongSound);
 
   const answerBox = useRef(null);
   const leftBorder = useRef(null);
@@ -32,6 +36,7 @@ function Answer({ answer, selectedAnswer, wrongAnswer }) {
   const handleAnswer = () => {
     if (currentQuestionObj.correct_answer === value) {
       setAnswerClass(styles.answerContainerCorrect);
+      correctAnswerAudio.play();
       if (currentQuestionId < 15) {
         debouncedNextQuestion();
         return;
@@ -40,6 +45,7 @@ function Answer({ answer, selectedAnswer, wrongAnswer }) {
         return;
       }
     }
+    wrongAnswerAudio.play();
     setIsClicked(true);
     setAnswerClass(styles.answerContainerWrong);
     wrongAnswer(true);
